@@ -1,7 +1,9 @@
 def solution(board, aloc, bloc):
     n, m = len(board), len(board[0])
     move = [(0, 1), (1, 0), (0, -1), (-1, 0)]
-    def inside(y, x): return 0 <= y < n and 0 <= y < m
+
+    def inside(y, x):
+        return 0 <= y < n and 0 <= x < m
 
     def dfs(aloc, bloc, seen, step):
         x, y = aloc if step % 2 == 0 else bloc
