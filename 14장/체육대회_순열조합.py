@@ -4,9 +4,7 @@ def combinations(array, tie):
     if tie == 0:
         return [ans]
 
-    for idx in range(len(array)):
-        node = array[idx]
-
+    for idx, node in enumerate(array):
         for edges in combinations(array[idx + 1:], tie - 1):
             ans += [(node, *edges)]
     return ans
@@ -18,9 +16,7 @@ def permutations(array, tie):
     if tie == 0:
         return [ans]
 
-    for idx in range(len(array)):
-        node = array[idx]
-
+    for idx, node in enumerate(array):
         for edges in permutations(array[:idx] + array[idx + 1:], tie - 1):
             ans += [(node, *edges)]
     return ans
