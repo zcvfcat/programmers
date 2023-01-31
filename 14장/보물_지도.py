@@ -27,6 +27,6 @@ def solution(n, m, hole):
                 if b & s == 1:
                     continue
 
-                ny, nx, nb = dy * (s + 1) + y, dx * (s + 1) + x, b | s
+                ny, nx, nb = y + dy * (s + 1), x + dx * (s + 1), b | s
 
                 # if in_boundary()
